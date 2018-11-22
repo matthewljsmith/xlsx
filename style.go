@@ -151,8 +151,8 @@ type Alignment struct {
 	WrapText     bool
 }
 
-var defaultFontSize = 12
-var defaultFontName = "Verdana"
+var defaultFontSize = 11
+var defaultFontName = "Calibri"
 
 func SetDefaultFont(size int, name string) {
 	defaultFontSize = size
