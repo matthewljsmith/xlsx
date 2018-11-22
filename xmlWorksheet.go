@@ -325,10 +325,18 @@ func newXlsxWorksheet() (worksheet *xlsxWorksheet) {
 		ZoomScaleNormal:         100,
 		ZoomScalePageLayoutView: 100}
 	worksheet.SheetViews.SheetView[0].Selection[0] = xlsxSelection{
-		Pane:         "topLeft",
+		Pane:         "bottomLeft",
 		ActiveCell:   "A1",
 		ActiveCellId: 0,
-		SQRef:        "A1"}
+		SQRef:        "A1",
+	}
+	worksheet.SheetViews.SheetView[0].Pane = &xlsxPane{
+		XSplit:      0,
+		YSplit:      1,
+		TopLeftCell: "A2",
+		ActivePane:  "bottomLeft",
+		State:       "frozen",
+	}
 	worksheet.SheetFormatPr.DefaultRowHeight = 12.85
 	worksheet.PrintOptions.Headings = false
 	worksheet.PrintOptions.GridLines = false
