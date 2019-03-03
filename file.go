@@ -150,7 +150,7 @@ func (f *File) Write(writer io.Writer) (err error) {
 	return zipWriter.Close()
 }
 
-// Add a new Sheet, with the provided name, to a File. 
+// Add a new Sheet, with the provided name, to a File.
 // The maximum sheet name length is 31 characters. If the sheet name length is exceeded an error is thrown.
 // These special characters are also not allowed: : \ / ? * [ ]
 func (f *File) AddSheet(sheetName string) (*Sheet, error) {
@@ -305,7 +305,7 @@ func (f *File) MarshallParts() (map[string]string, error) {
 	parts["docProps/app.xml"] = TEMPLATE_DOCPROPS_APP
 	// TODO - do this properly, modification and revision information
 	parts["docProps/core.xml"] = TEMPLATE_DOCPROPS_CORE
-	parts["xl/theme/theme1.xml"] = TEMPLATE_XL_THEME_THEME
+	// parts["xl/theme/theme1.xml"] = TEMPLATE_XL_THEME_THEME
 
 	xSST := refTable.makeXLSXSST()
 	parts["xl/sharedStrings.xml"], err = marshal(xSST)
