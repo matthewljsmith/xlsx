@@ -39,8 +39,6 @@ func MakeDefaultContentTypes() (types xlsxTypes) {
 	types.Overrides[5].ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"
 	types.Overrides[6].PartName = "/xl/workbook.xml"
 	types.Overrides[6].ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"
-	// types.Overrides[7].PartName = "/xl/theme/theme1.xml"
-	// types.Overrides[7].ContentType = "application/vnd.openxmlformats-officedocument.theme+xml"
 
 	types.Defaults[0].Extension = "rels"
 	types.Defaults[0].ContentType = "application/vnd.openxmlformats-package.relationships+xml"

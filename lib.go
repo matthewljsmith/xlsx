@@ -865,13 +865,6 @@ func (w *WorkBookRels) MakeXLSXWorkbookRels() xlsxWorkbookRels {
 		Type:   "http://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings"}
 
 	relCount++
-	// sheetId = fmt.Sprintf("rId%d", relCount)
-	// xWorkbookRels.Relationships[relCount-1] = xlsxWorkbookRelation{
-	// 	Id:     sheetId,
-	// 	Target: "theme/theme1.xml",
-	// 	Type:   "http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme"}
-
-	relCount++
 	sheetId = fmt.Sprintf("rId%d", relCount)
 	xWorkbookRels.Relationships[relCount-1] = xlsxWorkbookRelation{
 		Id:     sheetId,
@@ -966,8 +959,6 @@ func ReadZipReaderWithRowLimit(r *zip.Reader, rowLimit int) (*File, error) {
 			workbookRels = v
 		case "xl/styles.xml":
 			styles = v
-		// case "xl/theme/theme1.xml":
-		// 	themeFile = v
 		default:
 			if len(v.Name) > 17 {
 				if v.Name[0:13] == "xl/worksheets" {

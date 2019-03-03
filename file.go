@@ -305,7 +305,6 @@ func (f *File) MarshallParts() (map[string]string, error) {
 	parts["docProps/app.xml"] = TEMPLATE_DOCPROPS_APP
 	// TODO - do this properly, modification and revision information
 	parts["docProps/core.xml"] = TEMPLATE_DOCPROPS_CORE
-	// parts["xl/theme/theme1.xml"] = TEMPLATE_XL_THEME_THEME
 
 	xSST := refTable.makeXLSXSST()
 	parts["xl/sharedStrings.xml"], err = marshal(xSST)
